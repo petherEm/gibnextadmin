@@ -72,8 +72,8 @@ const projectConfig = {
   cookieSecret: process.env.COOKIE_SECRET,
   store_cors: STORE_CORS,
   database_url: DATABASE_URL,
-  admin_cors: "/http:\\/\\/localhost:700\\d+$/",
-  auth_cors: "/http:\\/\\/localhost:700\\d+$/",
+  admin_cors: ADMIN_CORS,
+
   database_extra:
     process.env.NODE_ENV !== "development"
       ? {
