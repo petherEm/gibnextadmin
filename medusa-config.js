@@ -46,10 +46,7 @@ const plugins = [
     resolve: "@medusajs/admin",
     /** @type {import('@medusajs/admin').PluginOptions} */
     options: {
-      autoRebuild: false,
-      develop: {
-        open: false,
-      },
+      autoRebuild: true,
     },
   },
 ];
@@ -75,7 +72,8 @@ const projectConfig = {
   cookieSecret: process.env.COOKIE_SECRET,
   store_cors: STORE_CORS,
   database_url: DATABASE_URL,
-  admin_cors: ADMIN_CORS,
+  admin_cors: "/http:\\/\\/localhost:700\\d+$/",
+  auth_cors: "/http:\\/\\/localhost:700\\d+$/",
   database_extra:
     process.env.NODE_ENV !== "development"
       ? {
