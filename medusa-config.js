@@ -60,6 +60,13 @@ const plugins = [
       autoRebuild: true,
     },
   },
+  {
+    resolve: `medusa-payment-stripe`,
+    options: {
+      api_key: process.env.STRIPE_API_KEY,
+      webhook_secret: process.env.STRIPE_WEBHOOK_SECRET,
+    },
+  },
 ];
 
 const modules = {
@@ -69,6 +76,7 @@ const modules = {
       redisUrl: REDIS_URL
     }
   },*/
+  // COMMENT OUT THE BELOW IN DEV MODE
   cacheService: {
     resolve: "@medusajs/cache-redis",
     options: {
